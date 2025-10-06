@@ -1,7 +1,5 @@
 package main
 
-//"net/http"
-
 func main() {
 	//cards := newDeck()
 	cards := newDeckFromFile("my_cards")
