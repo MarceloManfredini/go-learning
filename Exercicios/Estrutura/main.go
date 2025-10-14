@@ -23,10 +23,10 @@ func main() {
 		},
 	}
 	var jose person
-	jose.firstName = "Jose"
+	jose.firstName = "Silvio"
 	jose.lastName = "Alvarez"
 	jose.contact = contactinfo{
-		email:   "jose.alvarez@example.com",
+		email:   "silvio.alvarez@example.com",
 		zipCode: 54321,
 	}
 	//fmt.Println(p, jose)
