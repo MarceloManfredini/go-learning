@@ -15,11 +15,11 @@ func main() {
 }
 
 func (sb englishBot) getGreeting() string {
-	return "Hi there!"
+	return "Hi there !"
 }
 
 func (sb spanishBot) getGreeting() string {
-	return "¡Hola!"
+	return "¡Hola !"
 }
 
 func printGreeting(b bot) {
