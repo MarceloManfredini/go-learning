@@ -7,13 +7,13 @@ import (
 )
 
 func main() {
-	parametros := os.Args
+	param := os.Args
 
-	for i := 0; i < len(parametros); i++ {
-		fmt.Printf("%d - %s\n", i, parametros[i])
+	for i := 0; i < len(param); i++ {
+		fmt.Printf("%d - %s\n", i, param[i])
 	}
 
-	file, err := os.Open(parametros[1]) // For read access.
+	file, err := os.Open(param[1]) // For read access.
 	if err != nil {
 		fmt.Println("Error:", err)
 	}
