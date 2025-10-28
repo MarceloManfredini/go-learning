@@ -1,10 +1,11 @@
 package main
 
-// https://www.youtube.com/watch?v=lf_kiH_NPvM
+// https://www.youtube.com/watch?v=ma7rUS_vW9M&list=PL-LRDpVN2fZAluCzYNZdSCfJVQXe5ly90&index=10
 
 import (
-	"crud/controllers"
-	"crud/initializers"
+	"jwt-authentication/controllers"
+	"jwt-authentication/initializers"
+	"jwt-authentication/middleware"
 
 	"github.com/gin-gonic/gin"
 )
@@ -12,12 +13,12 @@ import (
 func init() {
 	initializers.LoadEnvVariables()
 	initializers.ConnectDatabase()
+	initializers.SyncDatabase()
 }
 func main() {
 	r := gin.Default()
-	r.POST("/posts", controllers.PostsCreate)
-	r.GET("/posts", controllers.PostsIndex)
-	r.GET("/posts/:id", controllers.PostsShow)
-	r.PUT("/posts/:id", controllers.PostsUpdate)
+	r.POST("/signup", controllers.Signup)
+	r.POST("/login", controllers.Login)
+	r.GET("/validate", middleware.RequireAuth, controllers.Validate)
 	r.Run()
 }
