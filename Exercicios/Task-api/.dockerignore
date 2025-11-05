@@ -1,0 +1,6 @@
+# Ignorar arquivos desnecessários
+.git
+.gitignore
+*.exe
+*.out
+__debug_bin.exe
